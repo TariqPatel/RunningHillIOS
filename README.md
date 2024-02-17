@@ -1,4 +1,6 @@
-Considerations made for application
+Considerations made for application\
+
+It does the word game as described in the assessment.
 
 Architecture chosen: MVVM
 Language: Swift, SwiftUI
