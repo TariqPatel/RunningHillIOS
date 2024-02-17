@@ -10,6 +10,8 @@ import SwiftUI
 struct HomeView: View {
     
     @StateObject var homeViewModel = HomeViewModel()
+    @State private var saveSentence = false
+    @State private var wordAdded = false
     
     var body: some View {
         VStack {
@@ -26,26 +28,36 @@ struct HomeView: View {
             }
         }
         VStack{
-            Text("sentence here")
+            Text(homeViewModel.sentence)
             HStack{
                 Button(action: {
-                    print("Button tapped!")
+                    if homeViewModel.selectedWord != "" {
+                        homeViewModel.addWordToSentence()
+                        wordAdded = true
+                    }
                 }) {
                     Text("ADD WORD")
                         .frame(maxWidth: .infinity)
                         .padding()
                         .background(Color.blue)
                         .foregroundColor(.white)
+                }.alert("Your word has been added.", isPresented: $wordAdded) {
+                    Button("OK", role: .cancel) { }
                 }
                 Spacer()
                 Button(action: {
-                    print("Button tapped!")
+                    if homeViewModel.sentence != "" {
+                        homeViewModel.saveSentence()
+                        saveSentence = true
+                    }
                 }) {
                     Text("SAVE SENTENCE")
                         .frame(maxWidth: .infinity)
                         .padding()
                         .background(Color.blue)
                         .foregroundColor(.white)
+                }.alert("Your sentence has been saved.", isPresented: $saveSentence) {
+                    Button("OK", role: .cancel) { }
                 }
             }.padding()
         }

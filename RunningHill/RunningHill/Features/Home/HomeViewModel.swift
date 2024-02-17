@@ -50,4 +50,27 @@ final class HomeViewModel: ObservableObject {
         }
     }
     
+    func addWordToSentence() {
+        if selectedWord != "" {
+            sentence = sentence + " " + selectedWord
+            selectedWord = ""
+        }
+    }
+    
+    func saveSentence() {
+        if sentence != "" {
+            let defaults = UserDefaults.standard
+            var savedSentence = defaults.object(forKey:"SavedSentence") as? [String] ?? [String]()
+            savedSentence.append(sentence)
+            defaults.set(savedSentence, forKey: "SavedSentence")
+        }
+        sentence = ""
+    }
+    
+    func getSentences() -> [String] {
+        let defaults = UserDefaults.standard
+        let savedSentence = defaults.object(forKey:"SavedSentence") as? [String] ?? [String]()
+        return savedSentence
+    }
+    
 }
