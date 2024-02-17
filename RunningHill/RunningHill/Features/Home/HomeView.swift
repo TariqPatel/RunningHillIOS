@@ -14,20 +14,18 @@ struct HomeView: View {
     @State private var wordAdded = false
     
     var body: some View {
+        NavigationView {
         VStack {
             Text(homeViewModel.instruction)
-        }
         
-        Text("Selected Word: " + homeViewModel.selectedWord)
+            Text("Selected Word: " + homeViewModel.selectedWord)
         
-        VStack{
             List(homeViewModel.selectedList, id: \.self) { word in
                 Button(word) {
                     homeViewModel.selectWord(word)
                 }
             }
-        }
-        VStack{
+        
             Text(homeViewModel.sentence)
             HStack{
                 Button(action: {
@@ -54,14 +52,22 @@ struct HomeView: View {
                     Text("SAVE SENTENCE")
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(Color.blue)
+                        .background(Color.purple)
                         .foregroundColor(.white)
                 }.alert("Your sentence has been saved.", isPresented: $saveSentence) {
                     Button("OK", role: .cancel) { }
                 }
             }.padding()
+            NavigationLink(destination: SentenceView(sentenceViewModel: SentenceViewModel(sentences: homeViewModel.getSentences()))) {
+                Text("VIEW SENTENCES")
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.green)
+                    .foregroundColor(.white)
+                
+            }.padding()
         }
-        Spacer()
+    }
     }
 }
 
