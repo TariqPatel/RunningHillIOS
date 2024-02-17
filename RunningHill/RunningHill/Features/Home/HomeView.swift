@@ -12,7 +12,11 @@ struct HomeView: View {
     @StateObject var homeViewModel = HomeViewModel()
     
     var body: some View {
-        Text(homeViewModel.name)
+        List(homeViewModel.adverbs, id: \.self) { word in
+            Button(word) {
+                print("Button tapped!")
+            }
+        }
     }
 }
 
