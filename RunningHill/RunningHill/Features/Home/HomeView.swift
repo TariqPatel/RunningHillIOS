@@ -13,20 +13,20 @@ struct HomeView: View {
     
     var body: some View {
         VStack {
-            Text("Add words to make your sentence")
-            Text(homeViewModel.selectedWord)
+            Text(homeViewModel.instruction)
         }
         
-        Text("sentence here")
+        Text("Selected Word: " + homeViewModel.selectedWord)
         
         VStack{
             List(homeViewModel.selectedList, id: \.self) { word in
                 Button(word) {
-                    homeViewModel.selectedWord = word
+                    homeViewModel.selectWord(word)
                 }
             }
         }
         VStack{
+            Text("sentence here")
             HStack{
                 Button(action: {
                     print("Button tapped!")
