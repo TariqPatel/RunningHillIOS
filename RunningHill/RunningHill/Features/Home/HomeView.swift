@@ -12,9 +12,18 @@ struct HomeView: View {
     @StateObject var homeViewModel = HomeViewModel()
     
     var body: some View {
-        List(homeViewModel.adverbs, id: \.self) { word in
-            Button(word) {
-                print("Button tapped!")
+        VStack{
+            List(homeViewModel.selectedList, id: \.self) { word in
+                Button(word) {
+                    homeViewModel.selectedWord = word
+                }
+            }
+            Text(homeViewModel.selectedWord)
+            Button("Verb") {
+                homeViewModel.selectWordList("verb")
+            }
+            Button("Noun") {
+                homeViewModel.selectWordList("noun")
             }
         }
     }
