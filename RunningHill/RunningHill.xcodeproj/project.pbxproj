@@ -18,6 +18,7 @@
 		2D5242512B806C4200658461 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5242502B806C4200658461 /* HomeView.swift */; };
 		2D52425A2B80D24700658461 /* SentenceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5242592B80D24700658461 /* SentenceViewModel.swift */; };
 		2D52425C2B80D25200658461 /* SentenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D52425B2B80D25200658461 /* SentenceView.swift */; };
+		2D52425E2B80DA2700658461 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D52425D2B80DA2700658461 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		2D5242502B806C4200658461 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2D5242592B80D24700658461 /* SentenceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceViewModel.swift; sourceTree = "<group>"; };
 		2D52425B2B80D25200658461 /* SentenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceView.swift; sourceTree = "<group>"; };
+		2D52425D2B80DA2700658461 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 		2D5242552B80D1AA00658461 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				2D52425D2B80DA2700658461 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				2D5242512B806C4200658461 /* HomeView.swift in Sources */,
 				2D52425A2B80D24700658461 /* SentenceViewModel.swift in Sources */,
 				2D5242212B806B9900658461 /* RunningHillApp.swift in Sources */,
+				2D52425E2B80DA2700658461 /* Constants.swift in Sources */,
 				2D52424F2B806C2900658461 /* HomeViewModel.swift in Sources */,
 				2D52425C2B80D25200658461 /* SentenceView.swift in Sources */,
 			);

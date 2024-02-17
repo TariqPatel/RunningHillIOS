@@ -8,34 +8,33 @@
 import Foundation
 
 final class HomeViewModel: ObservableObject {
-    @Published var selectedList: [String] = ["noun", "verb", "pronoun", "preposition", "exclamation", "determine", "conjunction", "adverb", "adjective"]
+    @Published var selectedList: [String] = Constants.Words.wordTypes
     @Published var selectedWord: String = ""
     @Published var instruction: String = "Select a word type"
     @Published var sentence: String = ""
     
-    //TODO Add constants file to clean up code
     func selectWordList(_ wordType: String) {
         switch wordType {
         case "noun":
-            selectedList = ["airplane", "box", "bread", "sheep", "pear", "crayons", "ladder"]
+            selectedList = Constants.Words.nouns
         case "verb":
-            selectedList = ["agree", "concur", "attack", "snap", "shout", "strive", "plead"]
+            selectedList = Constants.Words.verbs
         case "pronoun":
-            selectedList = ["I", "you", "he", "she", "it", "we", "they"]
+            selectedList = Constants.Words.pronouns
         case "preposition":
-            selectedList = ["above", "across", "against", "along", "around", "before"]
+            selectedList = Constants.Words.prepositions
         case "exclamation":
-            selectedList = ["ouch", "yuck", "ugh", "yikes", "shoot", "whoops", "rats"]
+            selectedList = Constants.Words.exclamations
         case "determine":
-            selectedList = ["learn", "determine", "certainty"]
+            selectedList = Constants.Words.determines
         case "conjunction":
-            selectedList = ["for", "and", "nor", "but", "or", "yet", "so"]
+            selectedList = Constants.Words.conjunctions
         case "adverb":
-            selectedList = ["accordingly", "tomorrow", "then", "previously", "fast", "kindly"]
+            selectedList = Constants.Words.adverbs
         case "adjective":
-            selectedList = ["beautiful", "witty", "wicked", "confusing", "rich", "new"]
+            selectedList = Constants.Words.adjectives
         default:
-            selectedList = ["noun", "verb", "pronoun", "preposition", "exclamation", "determine", "conjunction", "adverb", "adjective"]
+            selectedList = Constants.Words.wordTypes
         }
     }
     
@@ -45,7 +44,7 @@ final class HomeViewModel: ObservableObject {
             selectWordList(word)
         } else {
             selectedWord = word
-            selectedList = ["noun", "verb", "pronoun", "preposition", "exclamation", "determine", "conjunction", "adverb", "adjective"]
+            selectedList = Constants.Words.wordTypes
             instruction = "Select a word type"
         }
     }
