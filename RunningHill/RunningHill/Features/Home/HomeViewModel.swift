@@ -71,5 +71,4 @@ final class HomeViewModel: ObservableObject {
         let savedSentence = defaults.object(forKey:"SavedSentence") as? [String] ?? [String]()
         return savedSentence
     }
-    
 }
