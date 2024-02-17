@@ -10,7 +10,7 @@ import Foundation
 class Constants {
     
     class Words {
-        static let wordTypes = ["beautiful", "witty", "wicked", "confusing", "rich", "new"]
+        static let wordTypes = ["noun", "verb", "pronoun", "preposition", "exclamation", "determine", "conjunction", "adverb", "adjective"]
         static let nouns = ["airplane", "box", "bread", "sheep", "pear", "crayons", "ladder"]
         static let verbs = ["agree", "concur", "attack", "snap", "shout", "strive", "plead"]
         static let pronouns = ["I", "you", "he", "she", "it", "we", "they"]
